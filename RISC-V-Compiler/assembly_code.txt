@@ -1,0 +1,3 @@
+add a1, zero, a2
+add a2, zero, a3
+add  a3, a1, a2     
