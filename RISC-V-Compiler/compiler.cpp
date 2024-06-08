@@ -136,19 +136,15 @@ string compileLine(vector<string> tokens)
 
         // Second token is the destination register
         machineCode.insert(0, registers[tokens[1]]);
-        cout << "tokens[1]: " << tokens[1] << endl;
 
         // Translate the instruction to funct3
         machineCode.insert(0, funct3[instruction]);
-        cout << "funct3[instruction]: " << funct3[instruction] << endl;
 
         // Third token is the source register
         machineCode.insert(0, registers[tokens[2]]);
-        cout << "tokens[2]: " << tokens[2] << endl;
 
         // Fourth token is the immediate value
         machineCode.insert(0, convertToBinary(stoi(tokens[3])));
-        cout << "tokens[3]: " << tokens[3] << endl;
     }
 
     return machineCode;
