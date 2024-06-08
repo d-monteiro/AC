@@ -19,7 +19,18 @@ unordered_map<string, string> opcode = {
     {"srl", "0110011"},
     {"sra", "0110011"},
     {"slt", "0110011"},
-    {"sltu","0110011"}
+    {"sltu","0110011"},
+    
+    {"addi", "0010011"},
+    {"subi", "0010011"},
+    {"xori", "0010011"},
+    {"ori" , "0010011"},
+    {"andi", "0010011"},
+    {"slli", "0010011"},
+    {"srli", "0010011"},
+    {"srai", "0010011"},
+    {"slti", "0010011"},
+    {"sltiu","0010011"}
 };
 
 unordered_map<string, string> funct3 = {
@@ -32,7 +43,18 @@ unordered_map<string, string> funct3 = {
     {"srl", "101"},
     {"sra", "101"},
     {"slt", "010"},
-    {"sltu", "011"}
+    {"sltu", "011"},
+
+    {"addi", "000"},
+    {"subi", "000"},
+    {"xori", "100"},
+    {"ori" , "110"},
+    {"andi", "111"},
+    {"slli", "001"},
+    {"srli", "101"},
+    {"srai", "101"},
+    {"slti", "010"},
+    {"sltiu", "011"}
 };
 
 unordered_map<string, string> funct7 = {

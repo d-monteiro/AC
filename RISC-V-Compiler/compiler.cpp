@@ -8,10 +8,17 @@
 #include <unordered_map>
 #include <algorithm>
 #include <cctype>
+#include <bitset>
 
 #include "compiler.hpp"
 
 using namespace std;
+
+string convertToBinary(int num, int bitSize = 12)
+{
+    string binary = bitset<32>(num).to_string(); // Convert to binary
+    return binary.substr(binary.size() - bitSize); // Return the last bitSize bits
+}
 
 bool trim(string& str)
 {
@@ -118,6 +125,30 @@ string compileLine(vector<string> tokens)
 
         // Translate the instruction to funct7
         machineCode.insert(0, funct7[instruction]);
+    }
+
+    // Check the instruction (I-type)
+    if (instruction == "addi" || instruction == "andi" || 
+        instruction == "slli" || instruction == "slti" || 
+        instruction == "sltiu" || instruction == "xori" || 
+        instruction == "srli" || instruction == "srai" || 
+        instruction == "ori"){
+
+        // Second token is the destination register
+        machineCode.insert(0, registers[tokens[1]]);
+        cout << "tokens[1]: " << tokens[1] << endl;
+
+        // Translate the instruction to funct3
+        machineCode.insert(0, funct3[instruction]);
+        cout << "funct3[instruction]: " << funct3[instruction] << endl;
+
+        // Third token is the source register
+        machineCode.insert(0, registers[tokens[2]]);
+        cout << "tokens[2]: " << tokens[2] << endl;
+
+        // Fourth token is the immediate value
+        machineCode.insert(0, convertToBinary(stoi(tokens[3])));
+        cout << "tokens[3]: " << tokens[3] << endl;
     }
 
     return machineCode;
