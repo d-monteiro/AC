@@ -11,8 +11,8 @@ reg [N:0] phase_in_2;
 reg [N:0] amplitude_in;
 reg [N:0] amplitude_in_2;
 
-wire [N:0] out;
-wire [N:0] out2;
+wire [2*N:0] out;
+wire [2*N:0] out2;
 
 parameter N = 8;
 
@@ -57,7 +57,7 @@ begin
     phase_in = 0;
 	phase_in_2 = 256;
     amplitude_in = 1;
-	amplitude_in_2 = 2;
+	amplitude_in_2 = 8'b11111111;
 
     // Apply reset
     reset = 1;

@@ -4,7 +4,7 @@ module dds (
     input [N:0] freq_in,
     input [N:0] phase_in,
     input [N:0] amplitude_in,
-    output [N:0] out
+    output [2*N:0] out
 );
 
 parameter N = 8;

@@ -3,7 +3,7 @@ module phase_to_angle_converter(
   input [N:0] phase_in,     // Phase input
   input [N:0] amplitude_in, // Amplitude input
   
-  output reg [N:0] out      // Angle output
+  output reg [2*N:0] out      // Angle output
 );
 
 parameter N = 8;
