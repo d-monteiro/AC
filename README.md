@@ -1,4 +1,4 @@
-# RISC-V Compiler and Processor
+# FPGA
 
 This repository contains a RISC-V Compiler and Processor implemented in C++ and Verilog respectively, a DDS and a project for a BASYS 3 board done in the scope of an Erasmus+ partnership.
 
